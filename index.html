@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Jogo da Forca</h1>
+
+    <div id="game-area">
+        <div id="used-letters"></div>
+        <div id="gallows">
+            <div id="stickman">
+                <div class="body-part" id="head"></div>
+                <div class="body-part" id="body"></div>
+                <div class="body-part" id="arm-left"></div>
+                <div class="body-part" id="arm-right"></div>
+                <div class="body-part" id="leg-left"></div>
+                <div class="body-part" id="leg-right"></div>
+            </div>
+        </div>
+        <div id="word"></div>
+        <div id="guess-area">
+            <input type="text" id="guess-input" placeholder="Digite sua palavra">
+            <button id="guess-button" onclick="guessWord()">Chutar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

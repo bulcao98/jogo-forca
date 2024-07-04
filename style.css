@@ -1,0 +1,183 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f7e9d7;
+    /* Cor de papel velho */
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: #654321;
+    /* Marrom escuro */
+}
+
+/* Área do jogo */
+#game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* Forca */
+#gallows {
+    width: 200px;
+    height: 250px;
+    border-bottom: 10px solid #654321;
+    /* Base da forca */
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#gallows::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 250px;
+    background-color: #654321;
+    /* Poste vertical */
+}
+
+#gallows::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -80px;
+    width: 200px;
+    height: 10px;
+    background-color: #654321;
+    /* Trave superior */
+}
+
+#stickman {
+    position: relative;
+    left: 11rem;
+    top: -5rem;
+}
+
+/* Boneco da forca */
+.body-part {
+    background-color: #333;
+    position: absolute;
+    border-radius: 5px;
+}
+
+#head {
+    width: 50px;
+    height: 50px;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+#body {
+    width: 10px;
+    height: 80px;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#arm-left {
+    width: 55px;
+    height: 10px;
+    top: 150px;
+    left: 45px;
+}
+
+#arm-right {
+    width: 55px;
+    height: 10px;
+    top: 150px;
+    right: 45px;
+}
+
+#leg-left {
+    width: 10px;
+    height: 60px;
+    top: 200px;
+    left: 80px;
+    transform: rotate(30deg);
+}
+
+#leg-right {
+    width: 10px;
+    height: 60px;
+    top: 200px;
+    right: 80px;
+    transform: rotate(-30deg);
+}
+
+/* Palavra a ser adivinhada */
+#word {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.letter {
+    border-bottom: 3px solid #654321;
+    width: 30px;
+    text-align: center;
+    line-height: 1.5em;
+    height: 1.5em; /* Adiciona a altura para ocupar o espaço da letra */
+}
+
+/* Letras usadas */
+#used-letters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 20px;
+    height: 1.5rem;
+}
+
+.used-letter {
+    padding: 5px 10px;
+    border: 1px solid #654321;
+    border-radius: 5px;
+    font-weight: bold;
+}
+/* Área de chute */
+#guess-area {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#guess-input {
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #654321;
+    border-radius: 5px;
+    width: 200px;
+}
+
+#guess-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #654321;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#guess-button:hover {
+    background-color: #432109;
+}
