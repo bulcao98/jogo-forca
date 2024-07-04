@@ -157,6 +157,8 @@ function modal(message) {
     modalContent.style.backgroundColor = "#fff";
     modalContent.style.padding = "20px";
     modalContent.style.borderRadius = "5px";
+    modalContent.style.position = "relative";
+    modalContent.style.top = "-25%";
     modalContent.style.textAlign = "center";
 
     const modalMessage = document.createElement("p");
