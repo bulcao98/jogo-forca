@@ -140,6 +140,18 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
+function guessLetter(letter) {
+    let event = new KeyboardEvent('keydown', {
+        'key': letter,
+        'code': 'Key' + letter.charCodeAt(0),
+        'keyCode': letter.charCodeAt(0),
+        'which': letter.charCodeAt(0)
+    });
+    document.dispatchEvent(event);
+}
+
+
+
 function modal(message) {
     const modal = document.createElement("div");
     modal.style.position = "fixed";
