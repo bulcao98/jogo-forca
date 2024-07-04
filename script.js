@@ -36,9 +36,30 @@ function guessWord() {
     if (guessInputNoAccent === removeAccents(WORD)) {
         modal("Parabéns, você ganhou! A palavra é " + WORD);
         // Redireciona para uma página de vitória ou reinicia o jogo
+        // Completa a palavra no letters
+        const wordDiv = document.getElementById("word");
+        const letters = wordDiv.getElementsByClassName("letter");
+        for (let i = 0; i < WORD.length; i++) {
+            letters[i].innerText = WORD[i];
+        }
     } else {
-        modal("Você errou. A palavra era " + WORD + ". Tente novamente.");
-        // Redireciona para uma página de derrota ou reinicia o jogo
+        // Completa duas partes do boneco
+        const bodyParts = document.querySelectorAll(".body-part");
+        let partesVisiveis = 0;
+        for (let part of bodyParts) {
+            if (part.style.display === "none") {
+                part.style.display = "block";
+                partesVisiveis++;
+                if (partesVisiveis === 2) break;
+            }
+        }
+
+        let ultimaParteVisivel = !Array.from(bodyParts).some(part => part.style.display === "none");
+        if (ultimaParteVisivel) {
+            // Se a última parte do boneco estiver visível, finaliza a rodada
+            modal("Você perdeu! A palavra era " + WORD);
+            // Redireciona para uma página de derrota ou reinicia o jogo
+        }
     }
 }
 
@@ -99,7 +120,7 @@ document.addEventListener("keydown", function (event) {
 
                 // Se não houver mais partes do corpo para mostrar, exibe a mensagem de derrota
                 if (!remainingBodyParts) {
-                    modal("Você perdeu. A palavra era " + WORD + ". Tente novamente.");
+                    modal("Você perdeu! A palavra era " + WORD);
                 }
             }
 
